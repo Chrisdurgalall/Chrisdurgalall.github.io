@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<head>
+<script src="/assets/jquery.js"></script>
+<link href='https://fonts.googleapis.com/css?family=Londrina+Shadow' rel='stylesheet' type='text/css'>
+<style>
+body {
+  font-family: helvetica, sans-serif;
+  margin: 0 auto;
+  max-width: 600px;
+  background: #232323;
+}
+div {
+  height: 300px;
+  background-size: cover;
+  position: relative;
+  margin: 40px 0 0 0;
+  border-radius: 12px;
+}
+h1 {
+  font-family: 'Londrina Shadow', cursive;
+  text-align: center;
+  font-size: 75px;
+  color: #aaaaaa;
+  margin: 60px 0 0 0;
+}
+h2 {
+  text-align: center;
+  color: #bbbbbb;
+  margin: 0px 0 70px 0;
+}
+ul {
+      padding: 10px;
+      background: rgba(0,0,0,0.5);
+      text-align: center
+    
+    }
+    li {
+      display: inline;
+      padding: 0px 10px 0px 10px;
+    }
+p {
+  color: rgba(255,255,255,1);
+  background: black;
+  background: linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -webkit-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  background: -moz-linear-gradient(bottom, rgba(0,0,0,1), rgba(0,0,0,.4));
+  padding: 10px;
+  line-height: 28px;
+  text-align: justify;
+  position: absolute;
+  bottom: 0;
+  margin: 0;
+  height: 30px;
+  transition: height .5s;
+  -webkit-transition: height .5s;
+  -moz-transition: height .5s;
+}
+
+small {
+  opacity: 0;
+}
+
+.show-description p {
+  height: 150px;
+}
+
+.show-description small {
+  opacity: 1;
+}
+
+.first{
+  background-image: url("http://dash.ga.co/assets/firstcourse.jpg");
+}
+.second{
+  background-image: url("http://dash.ga.co/assets/secondcourse.jpg");
+}
+.dessert{
+  background-image: url("http://dash.ga.co/assets/dessertcourse.jpg");
+}
+.price {
+  float: right;
+}
+@media (max-width: 500px) {
+  h1 {
+    font-size: 50px;
+    margin-top: 20px;
+    line-height: 40px;
+  }
+  h2 {
+    font-size: 20px;
+    margin: 20px 0 30px 0;
+  }
+  div {
+    margin: 20px 12px 0 12px;
+  }
+  p {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  small {
+    font-size: 16px;
+  }
+}
+
+</style>
+
+</head>
+
+<body>
+<ul>
+      <li><button onclick=appetizers()>Appetizers </button></li>
+      <li><button onclick= entrees()>entrees</button></li>
+      <li><button onclick=desserts()>desserts</button></li>
+    </ul>
+<h1>Chris's restaurant</h1>
+<h2>a New York City eatery</h2>
+
+<div id="OBJ"> </div>
+
+<script>
+appetizersImages = [
+  'url("https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.myrecipes.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2Ffingerling-potatoes-avocado-smoked-salmon-sl.jpg%3Fitok%3DGWQr7Sk4&w=450&c=sc&poi=face&q=85")',
+  'url("https://cdn-image.myrecipes.com/sites/default/files/styles/medium_2x/public/image/recipes/marinated-cheese-x.jpg?itok=jsmX3ZWH")',
+  'url("https://www.glutenfreepalate.com/wp-content/uploads/2016/09/Sausage-and-Bacon-Appertizer2.3.jpg")',
+]
+
+entreesImages = [
+  'url("http://www.mrsdash.com/sites/default/files/entree-cold.jpg")',
+  'url("https://www.justataste.com/wp-content/uploads/2018/01/quick-spaghetti-bolognese-turkey-recipe-540x440.jpg)',
+  'url("https://logansinthecarolinas.com/images/gallery/ChickSeafood/shrimpentree_pop.jpg")',
+  ]
+  
+dessertsImages = [
+  'url("https://images-gmi-pmc.edge-generalmills.com/817d708a-33e6-46f7-b985-0360b6c55cf4.jpg")',
+  'url("https://www.spendwithpennies.com/wp-content/uploads/2017/06/Patriotic-4th-July-Jelly-3.jpg")',
+  'url("https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_645,q_50,w_1024/v1/clients/denver/fort-negrita-dessert_55cbcb0f-f0ae-5102-065b59c057badd22.jpg")',
+]
+
+AppetizersDivs= [
+        '<div class="item"><p>Potatoes avacado smoked salmon <span class="price">$14</span><br /><small>Its potatoe with smoked salmon. </small></p></div>',
+
+        '<div class="item"><p>Marrinated cheese <span class="price">$22</span><br /><small>It is marrinated cheeseon a cracker.</small></p></div>',
+  
+        '<div class="item"><p>Sasuage and bacon <span class="price">$8</span><br /><small>Sasuage and bacon on a roll conected to a stick  </small></p></div>',
+     ]
+     
+EntreesDivs= [
+     '<div class="item"><p>entree cold <span class="price">$12</span><br /><small>Mustard sierra leone bologi kale chard beet greens black-eyed pea sorrel amaranth garlic tigernut spring onion summer purslane asparagus lentil. </small></p></div>',
+
+        '<div class="item"><p>spaghetti bolognese turkey <span class="price">$14</span><br /><small>Tri-tip capicola kielbasa salami brisket chicken rump strip steak drumstick. Meatloaf chuck boudin ribeye pork jowl. Andouille bacon jowl meatloaf pork loin prosciutto bresaola.</small></p></div>',
+  
+        '<div class="item"><p>Shrimp sea food <span class="price">$8</span><br /><small>Its shrimp with brocolli.</small></p></div>',
+  
+  ]
+DessertsDivs= [
+     '<div class="item"><p>brownie <span class="price">$12</span><br /><small>Brownie with icing and chocolate chips on it . </small></p></div>',
+
+        '<div class="item"><p>USA ice jello <span class="price">$14</span><br /><small>It is a USA jelly with icing on it .</small></p></div>',
+  
+        '<div class="item"><p>fort negrita dessert<span class="price">$8</span><br /><small>It is a choclately crust with ice cream inside.</small></p></div>',
+        ]
+        
+function appetizers() {
+  //alert("appeteizers")
+  
+  Food = document.getElementById("OBJ")
+  Food.innerHTML = ''
+  Food.innerHTML+= AppetizersDivs[0]
+  Food.innerHTML+= AppetizersDivs[1]
+  Food.innerHTML+= AppetizersDivs[2]
+  items = document.getElementsByClassName("item")
+  for (i=0; i<3; i=i+1) {
+		items[i].style.background = appetizersImages[i]
+		items[i].style.backgroundSize = '100% 100%'
+  }
+}
+
+function entrees() {
+  //alert("entrees")
+  
+  Food = document.getElementById("OBJ")
+  Food.innerHTML = ''
+  Food.innerHTML+= EntreesDivs[0]
+  Food.innerHTML+= EntreesDivs[1]
+  Food.innerHTML+= EntreesDivs[2]
+  items = document.getElementsByClassName("item")
+  for (i=0; i<3; i=i+1) {
+		items[i].style.background = entreesImages[i]
+		items[i].style.backgroundSize = '100% 100%'
+  }
+}
+
+function desserts() {
+  //alert("desserts")
+  
+  Food = document.getElementById("OBJ")
+  Food.innerHTML = ''
+  Food.innerHTML+= DessertsDivs[0]
+  Food.innerHTML+= DessertsDivs[1]
+  Food.innerHTML+= DessertsDivs[2]
+  items = document.getElementsByClassName("item")
+  for (i=0; i<3; i=i+1) {
+		items[i].style.background = dessertsImages[i]
+		items[i].style.backgroundSize = '100% 100%'
+  }
+}
+
+
+  $('div').on('click', function() {
+      $(this).toggleClass('show-description');
+  });
+</script>
+
+</body>
