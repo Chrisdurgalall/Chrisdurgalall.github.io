@@ -137,6 +137,7 @@ dessertsImages = [
   'url("https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_645,q_50,w_1024/v1/clients/denver/fort-negrita-dessert_55cbcb0f-f0ae-5102-065b59c057badd22.jpg")',
 ]
 
+
 AppetizersDivs= [
         '<div class="item"><p>Potatoes avacado smoked salmon <span class="price">$14</span><br /><small>Its potatoe with smoked salmon. </small></p></div>',
 
@@ -146,21 +147,26 @@ AppetizersDivs= [
      ]
      
 EntreesDivs= [
-     '<div class="item"><p>entree cold <span class="price">$12</span><br /><small>Mustard sierra leone bologi kale chard beet greens black-eyed pea sorrel amaranth garlic tigernut spring onion summer purslane asparagus lentil. </small></p></div>',
+     '<div class="item" onclick=this.classList.toggle("show-description")><p>entree cold <span class="price">$12</span><br /><small>Mustard sierra leone bologi kale chard beet greens black-eyed pea sorrel amaranth garlic tigernut spring onion summer purslane asparagus lentil. </small></p></div>',
 
-        '<div class="item"><p>spaghetti bolognese turkey <span class="price">$14</span><br /><small>Tri-tip capicola kielbasa salami brisket chicken rump strip steak drumstick. Meatloaf chuck boudin ribeye pork jowl. Andouille bacon jowl meatloaf pork loin prosciutto bresaola.</small></p></div>',
+        '<div class="item" onclick=this.classList.toggle("show-description")><p>spaghetti bolognese turkey <span class="price">$14</span><br /><small>Tri-tip capicola kielbasa salami brisket chicken rump strip steak drumstick. Meatloaf chuck boudin ribeye pork jowl. Andouille bacon jowl meatloaf pork loin prosciutto bresaola.</small></p></div>',
   
-        '<div class="item"><p>Shrimp sea food <span class="price">$8</span><br /><small>Its shrimp with brocolli.</small></p></div>',
+        '<div class="item" onclick=this.classList.toggle("show-description")><p>Shrimp sea food <span class="price">$8</span><br /><small>Its shrimp with brocolli.</small></p></div>',
   
   ]
 DessertsDivs= [
-     '<div class="item"><p>brownie <span class="price">$12</span><br /><small>Brownie with icing and chocolate chips on it . </small></p></div>',
+     '<div class="item" onclick=this.classList.toggle("show-description")><p>brownie <span class="price">$12</span><br /><small>Brownie with icing and chocolate chips on it . </small></p></div>',
 
-        '<div class="item"><p>USA ice jello <span class="price">$14</span><br /><small>It is a USA jelly with icing on it .</small></p></div>',
+        '<div class="item"onclick=this.classList.toggle("show-description")><p>USA ice jello <span class="price">$14</span><br /><small>It is a USA jelly with icing on it .</small></p></div>',
   
-        '<div class="item"><p>fort negrita dessert<span class="price">$8</span><br /><small>It is a choclately crust with ice cream inside.</small></p></div>',
+        '<div class="item" onclick=this.classList.toggle("show-description")><p>fort negrita dessert<span class="price">$8</span><br /><small>It is a choclately crust with ice cream inside.</small></p></div>',
 	
         ]
+SponsorDivs= [
+'<div class="item" onclick=this.classList.toggle("show-description")><p>kyrie dukes<span class="price">$130</span><br /><small>Kyrie Irving old college basketball Duke University. </small></p></div>',
+        '<div class="item" onclick=this.classList.toggle("show-description")><p> kd all star shoes 2019 <span class="price">$200</span><br /><small>Kevin Durant shoes that he wore in the 2019 All star game when he was on team Lebron and he won MVP .</small></p></div>',
+	
+	]
         
 function appetizers() {
   //alert("appeteizers")
