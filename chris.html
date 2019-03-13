@@ -56,19 +56,15 @@ p {
   -webkit-transition: height .5s;
   -moz-transition: height .5s;
 }
-
 small {
   opacity: 0;
 }
-
 .show-description p {
   height: 150px;
 }
-
 .show-description small {
   opacity: 1;
 }
-
 .first{
   background-image: url("http://dash.ga.co/assets/firstcourse.jpg");
 }
@@ -102,7 +98,6 @@ small {
     font-size: 16px;
   }
 }
-
 </style>
 
 </head>
@@ -112,6 +107,7 @@ small {
       <li><button onclick=appetizers()>Appetizers </button></li>
       <li><button onclick= entrees()>entrees</button></li>
       <li><button onclick=desserts()>desserts</button></li>
+	  <li><button onclick=sponsor()>sponsor</button></li>
     </ul>
 <h1>Chris's restaurant</h1>
 <h2>a New York City eatery</h2>
@@ -124,7 +120,6 @@ appetizersImages = [
   'url("https://cdn-image.myrecipes.com/sites/default/files/styles/medium_2x/public/image/recipes/marinated-cheese-x.jpg?itok=jsmX3ZWH")',
   'url("https://www.glutenfreepalate.com/wp-content/uploads/2016/09/Sausage-and-Bacon-Appertizer2.3.jpg")',
 ]
-
 entreesImages = [
   'url("http://www.mrsdash.com/sites/default/files/entree-cold.jpg")',
   'url("https://www.justataste.com/wp-content/uploads/2018/01/quick-spaghetti-bolognese-turkey-recipe-540x440.jpg)',
@@ -135,39 +130,41 @@ dessertsImages = [
   'url("https://images-gmi-pmc.edge-generalmills.com/817d708a-33e6-46f7-b985-0360b6c55cf4.jpg")',
   'url("https://www.spendwithpennies.com/wp-content/uploads/2017/06/Patriotic-4th-July-Jelly-3.jpg")',
   'url("https://assets.simpleviewinc.com/simpleview/image/upload/c_fill,h_645,q_50,w_1024/v1/clients/denver/fort-negrita-dessert_55cbcb0f-f0ae-5102-065b59c057badd22.jpg")',
+ 'url("https://images.food52.com/BYv-qGl0TEFc_VxeLrUPub4ufdg=/753x502/13f62db6-536f-4611-9358-d21c8b558ec9--2018-0703_oreo-dessert_3x2_ty-mecham_002.jpg")',
+ 'url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ3grZf7flyreHtm_n8s7bt4gJtgaTcjgYhDkYnrxKm58xFe3YcLg")',
 ]
-
-
+SponsorImages = [
+	'url("https://sneakernews.com/wp-content/uploads/2018/03/nike-kyrie-4-duke-blue-devils-pe-3.jpg")',
+	'url("https://bloximages.chicago2.vip.townnews.com/journalstar.com/content/tncms/assets/v3/editorial/a/c8/ac8a0c4c-35e8-51c2-a4ae-ad58a8892691/5c61dcf14a5b7.image.jpg?resize=1200%2C805")',
+]
 AppetizersDivs= [
-        '<div class="item"><p>Potatoes avacado smoked salmon <span class="price">$14</span><br /><small>Its potatoe with smoked salmon. </small></p></div>',
-
-        '<div class="item"><p>Marrinated cheese <span class="price">$22</span><br /><small>It is marrinated cheeseon a cracker.</small></p></div>',
+        '<div class="item"onclick=this.classList.toggle("show-description")><p>Potatoes avacado smoked salmon <span class="price">$14</span><br /><small>Its potatoe with smoked salmon. </small></p></div>',
+        '<div class="item"onclick=this.classList.toggle("show-description")><p>Marrinated cheese <span class="price">$22</span><br /><small>It is marrinated cheeseon a cracker.</small></p></div>',
   
-        '<div class="item"><p>Sasuage and bacon <span class="price">$8</span><br /><small>Sasuage and bacon on a roll conected to a stick  </small></p></div>',
+        '<div class="item"onclick=this.classList.toggle("show-description")><p>Sasuage and bacon <span class="price">$8</span><br /><small>Sasuage and bacon on a roll conected to a stick  </small></p></div>',
      ]
      
 EntreesDivs= [
      '<div class="item" onclick=this.classList.toggle("show-description")><p>entree cold <span class="price">$12</span><br /><small>Mustard sierra leone bologi kale chard beet greens black-eyed pea sorrel amaranth garlic tigernut spring onion summer purslane asparagus lentil. </small></p></div>',
-
-        '<div class="item" onclick=this.classList.toggle("show-description")><p>spaghetti bolognese turkey <span class="price">$14</span><br /><small>Tri-tip capicola kielbasa salami brisket chicken rump strip steak drumstick. Meatloaf chuck boudin ribeye pork jowl. Andouille bacon jowl meatloaf pork loin prosciutto bresaola.</small></p></div>',
+        '<div class="item" onclick=this.classList.toggle("show-description") ><p>spaghetti bolognese turkey <span class="price">$14</span><br /><small>Tri-tip capicola kielbasa salami brisket chicken rump strip steak drumstick. Meatloaf chuck boudin ribeye pork jowl. Andouille bacon jowl meatloaf pork loin prosciutto bresaola.</small></p></div>',
   
         '<div class="item" onclick=this.classList.toggle("show-description")><p>Shrimp sea food <span class="price">$8</span><br /><small>Its shrimp with brocolli.</small></p></div>',
   
   ]
 DessertsDivs= [
      '<div class="item" onclick=this.classList.toggle("show-description")><p>brownie <span class="price">$12</span><br /><small>Brownie with icing and chocolate chips on it . </small></p></div>',
-
-        '<div class="item"onclick=this.classList.toggle("show-description")><p>USA ice jello <span class="price">$14</span><br /><small>It is a USA jelly with icing on it .</small></p></div>',
+        '<div class="item" onclick=this.classList.toggle("show-description") ><p>USA ice jello <span class="price">$14</span><br /><small>It is a USA jelly with icing on it .</small></p></div>',
   
         '<div class="item" onclick=this.classList.toggle("show-description")><p>fort negrita dessert<span class="price">$8</span><br /><small>It is a choclately crust with ice cream inside.</small></p></div>',
-	
+	     '<div class="item" onclick=this.classList.toggle("show-description")><p>oreo cake dessert<span class="price">$4</span><br /><small>It is a choclately crust with ice cream inside.</small></p></div>',
+	'<div class="item" onclick=this.classList.toggle("show-description")><p>oreo cookies cake<span class="price">$3</span><br /><small>It is a choclate inside with candy on the outside.</small></p></div>',
         ]
 SponsorDivs= [
 '<div class="item" onclick=this.classList.toggle("show-description")><p>kyrie dukes<span class="price">$130</span><br /><small>Kyrie Irving old college basketball Duke University. </small></p></div>',
         '<div class="item" onclick=this.classList.toggle("show-description")><p> kd all star shoes 2019 <span class="price">$200</span><br /><small>Kevin Durant shoes that he wore in the 2019 All star game when he was on team Lebron and he won MVP .</small></p></div>',
 	
 	]
-        
+	
 function appetizers() {
   //alert("appeteizers")
   
@@ -182,7 +179,6 @@ function appetizers() {
 		items[i].style.backgroundSize = '100% 100%'
   }
 }
-
 function entrees() {
   //alert("entrees")
   
@@ -197,7 +193,6 @@ function entrees() {
 		items[i].style.backgroundSize = '100% 100%'
   }
 }
-
 function desserts() {
   //alert("desserts")
   
@@ -206,14 +201,29 @@ function desserts() {
   Food.innerHTML+= DessertsDivs[0]
   Food.innerHTML+= DessertsDivs[1]
   Food.innerHTML+= DessertsDivs[2]
+  Food.innerHTML+= DessertsDivs[3]
+  Food.innerHTML+= DessertsDivs[4]
   items = document.getElementsByClassName("item")
-  for (i=0; i<3; i=i+1) {
+  for (i=0; i<5; i=i+1) {
 		items[i].style.background = dessertsImages[i]
 		items[i].style.backgroundSize = '100% 100%'
   }
 }
-
-$('div').on('click', function() {
+function sponsor() {
+	//alert("Sponsor")
+	
+    Shoes = document.getElementById("OBJ")
+    Shoes.innerHTML = ''
+    Shoes.innerHTML += SponsorDivs[0]
+    Shoes.innerHTML += SponsorDivs[1]
+    //Shoes.innerHTML+= SponsorDivs[2]
+    items = document.getElementsByClassName("item")
+    for (i=0; i<2; i=i+1) {
+  		items[i].style.background = SponsorImages[i]
+  		items[i].style.backgroundSize = '100% 100%'
+  }
+}
+  $('div').on('click', function() {
       $(this).toggleClass('show-description');
   });
 </script>
