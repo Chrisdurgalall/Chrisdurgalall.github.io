@@ -119,6 +119,7 @@ appetizersImages = [
   'url("https://imagesvc.timeincapp.com/v3/mm/image?url=https%3A%2F%2Fcdn-image.myrecipes.com%2Fsites%2Fdefault%2Ffiles%2Fstyles%2Fmedium_2x%2Fpublic%2Ffingerling-potatoes-avocado-smoked-salmon-sl.jpg%3Fitok%3DGWQr7Sk4&w=450&c=sc&poi=face&q=85")',
   'url("https://cdn-image.myrecipes.com/sites/default/files/styles/medium_2x/public/image/recipes/marinated-cheese-x.jpg?itok=jsmX3ZWH")',
   'url("https://www.glutenfreepalate.com/wp-content/uploads/2016/09/Sausage-and-Bacon-Appertizer2.3.jpg")',
+  'url("https://hips.hearstapps.com/hmg-prod.s3.amazonaws.com/images/fall-appetizers-bacon-1529940466.jpg")',
 ]
 entreesImages = [
   'url("http://www.mrsdash.com/sites/default/files/entree-cold.jpg")',
@@ -142,7 +143,10 @@ AppetizersDivs= [
         '<div class="item"onclick=this.classList.toggle("show-description")><p>Marrinated cheese <span class="price">$22</span><br /><small>It is marrinated cheeseon a cracker.</small></p></div>',
   
         '<div class="item"onclick=this.classList.toggle("show-description")><p>Sasuage and bacon <span class="price">$8</span><br /><small>Sasuage and bacon on a roll conected to a stick  </small></p></div>',
-     ]
+   
+      '<div class="item"onclick=this.classList.toggle("show-description")><p>bacon <span class="price">$4</span><br /><small>bacon on a roll conected to a stick  </small></p></div>',
+
+   ]
      
 EntreesDivs= [
      '<div class="item" onclick=this.classList.toggle("show-description")><p>entree cold <span class="price">$12</span><br /><small>Mustard sierra leone bologi kale chard beet greens black-eyed pea sorrel amaranth garlic tigernut spring onion summer purslane asparagus lentil. </small></p></div>',
@@ -173,8 +177,9 @@ function appetizers() {
   Food.innerHTML+= AppetizersDivs[0]
   Food.innerHTML+= AppetizersDivs[1]
   Food.innerHTML+= AppetizersDivs[2]
+  Food.innerHTML+= AppetizersDivs[3]
   items = document.getElementsByClassName("item")
-  for (i=0; i<3; i=i+1) {
+  for (i=0; i<4; i=i+1) {
 		items[i].style.background = appetizersImages[i]
 		items[i].style.backgroundSize = '100% 100%'
   }
